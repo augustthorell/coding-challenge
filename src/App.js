@@ -1,8 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 
-
-
 /*** Components ***/
 import Footer from './components/footer'
 import Header from './components/header'
@@ -15,7 +13,6 @@ import Partners from './pages/partners'
 
 function App() {
   const size = useWindowSize();
-
 
   return (
     <Router >
@@ -33,7 +30,6 @@ function App() {
   );
 }
 
-
 export default App
 
 function useWindowSize() {
@@ -45,7 +41,6 @@ function useWindowSize() {
       } else {
         setWindowSize(false)
       }
-
     }
     window.addEventListener("resize", handleResize);
     handleResize();
