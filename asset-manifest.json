@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/augustthorell/coding-challenge/static/css/main.eae90f82.chunk.css",
-    "main.js": "/augustthorell/coding-challenge/static/js/main.d1254217.chunk.js",
-    "main.js.map": "/augustthorell/coding-challenge/static/js/main.d1254217.chunk.js.map",
-    "runtime-main.js": "/augustthorell/coding-challenge/static/js/runtime-main.0e36a7df.js",
-    "runtime-main.js.map": "/augustthorell/coding-challenge/static/js/runtime-main.0e36a7df.js.map",
-    "static/js/2.0326d6da.chunk.js": "/augustthorell/coding-challenge/static/js/2.0326d6da.chunk.js",
-    "static/js/2.0326d6da.chunk.js.map": "/augustthorell/coding-challenge/static/js/2.0326d6da.chunk.js.map",
-    "index.html": "/augustthorell/coding-challenge/index.html",
-    "static/css/main.eae90f82.chunk.css.map": "/augustthorell/coding-challenge/static/css/main.eae90f82.chunk.css.map",
-    "static/js/2.0326d6da.chunk.js.LICENSE.txt": "/augustthorell/coding-challenge/static/js/2.0326d6da.chunk.js.LICENSE.txt",
-    "static/media/giftCard.dfbf1ada.png": "/augustthorell/coding-challenge/static/media/giftCard.dfbf1ada.png",
-    "static/media/happiCard.20fa0b38.png": "/augustthorell/coding-challenge/static/media/happiCard.20fa0b38.png",
-    "static/media/ngo.b7f17cb4.png": "/augustthorell/coding-challenge/static/media/ngo.b7f17cb4.png",
-    "static/media/startImage.2707783b.png": "/augustthorell/coding-challenge/static/media/startImage.2707783b.png",
-    "static/media/stockphoto1.3004ac41.jpeg": "/augustthorell/coding-challenge/static/media/stockphoto1.3004ac41.jpeg",
-    "static/media/stockphoto2.c9a59431.jpeg": "/augustthorell/coding-challenge/static/media/stockphoto2.c9a59431.jpeg"
+    "main.css": "/coding-challenge/static/css/main.eae90f82.chunk.css",
+    "main.js": "/coding-challenge/static/js/main.d1254217.chunk.js",
+    "main.js.map": "/coding-challenge/static/js/main.d1254217.chunk.js.map",
+    "runtime-main.js": "/coding-challenge/static/js/runtime-main.4a048848.js",
+    "runtime-main.js.map": "/coding-challenge/static/js/runtime-main.4a048848.js.map",
+    "static/js/2.a60f444e.chunk.js": "/coding-challenge/static/js/2.a60f444e.chunk.js",
+    "static/js/2.a60f444e.chunk.js.map": "/coding-challenge/static/js/2.a60f444e.chunk.js.map",
+    "index.html": "/coding-challenge/index.html",
+    "static/css/main.eae90f82.chunk.css.map": "/coding-challenge/static/css/main.eae90f82.chunk.css.map",
+    "static/js/2.a60f444e.chunk.js.LICENSE.txt": "/coding-challenge/static/js/2.a60f444e.chunk.js.LICENSE.txt",
+    "static/media/giftCard.dfbf1ada.png": "/coding-challenge/static/media/giftCard.dfbf1ada.png",
+    "static/media/happiCard.20fa0b38.png": "/coding-challenge/static/media/happiCard.20fa0b38.png",
+    "static/media/ngo.b7f17cb4.png": "/coding-challenge/static/media/ngo.b7f17cb4.png",
+    "static/media/startImage.2707783b.png": "/coding-challenge/static/media/startImage.2707783b.png",
+    "static/media/stockphoto1.3004ac41.jpeg": "/coding-challenge/static/media/stockphoto1.3004ac41.jpeg",
+    "static/media/stockphoto2.c9a59431.jpeg": "/coding-challenge/static/media/stockphoto2.c9a59431.jpeg"
   },
   "entrypoints": [
-    "static/js/runtime-main.0e36a7df.js",
-    "static/js/2.0326d6da.chunk.js",
+    "static/js/runtime-main.4a048848.js",
+    "static/js/2.a60f444e.chunk.js",
     "static/css/main.eae90f82.chunk.css",
     "static/js/main.d1254217.chunk.js"
   ]
