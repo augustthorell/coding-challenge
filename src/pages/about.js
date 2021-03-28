@@ -10,7 +10,6 @@ function About() {
 
     const apiFetch = () => {
         Axios.get('https://official-joke-api.appspot.com/random_joke').then((response) => {
-            console.log(response)
             setJoke({ setup: response.data.setup, punchline: response.data.punchline })
         })
     }

@@ -12,9 +12,8 @@ function Home() {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(emailSubscription)
     }
-    /* console.log(emailSubscription) */
+
 
 
     return (

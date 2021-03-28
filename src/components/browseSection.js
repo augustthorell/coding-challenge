@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import giftboxImage from '../assets/giftbox.png'
 import { FaChevronDown } from "react-icons/fa"
 import '../style.css'
@@ -21,7 +21,6 @@ function BrowseSection({ email, handleChange, handleSubmit }) {
     const [text2, setOpenText2] = useState(false)
     const [text3, setOpenText3] = useState(false)
 
-    const inputRef = useRef()
 
 
 
@@ -68,7 +67,7 @@ function BrowseSection({ email, handleChange, handleSubmit }) {
                         type='text'
                         required
                         placeholder='Enter your Email'
-                        inputRef={inputRef}
+                        value={email}
                         onChange={(e) => handleChange(e.target.value)}
                     />
                     <input
