@@ -11,7 +11,7 @@ export default function welcomeBlock() {
         top: '50%',
         right: '5vw',
         width: '400px',
-        color: '#fff',
+
         fontSize: '30px',
         margin: '0',
         transform: 'translate(-0%, -50%)',
@@ -34,6 +34,8 @@ export default function welcomeBlock() {
                 <h1>Welcome to HappyWeb</h1>
                 <button style={buttonStyle}>See more</button>
             </div>
+
+
         </div>
     )
 }

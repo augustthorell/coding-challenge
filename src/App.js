@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+
 
 /*** Components ***/
 import Footer from './components/footer'
@@ -11,21 +13,44 @@ import Career from './pages/career'
 import Partners from './pages/partners'
 
 function App() {
+  const size = useWindowSize();
+
+
   return (
-    <Router>
+    <Router >
       <div style={{ minHeight: '100vh', position: 'relative' }}>
-        <Header />
+        <Header size={size} />
         <Switch>
-          <Route path="/" exact component={Home} />
+          <Route path="/" exact> <Home size={size} /></Route>
           <Route path="/about" component={About} />
           <Route path="/career" component={Career} />
           <Route path="/partners" component={Partners} />
         </Switch>
-        <Footer />
+        <Footer size={size} />
       </div>
-    </Router>
+    </Router >
   );
 }
 
 
-export default App;
+export default App
+
+function useWindowSize() {
+  const [windowSize, setWindowSize] = useState(null);
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth >= 970) {
+        setWindowSize(true)
+      } else {
+        setWindowSize(false)
+      }
+
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return windowSize;
+}
+
+

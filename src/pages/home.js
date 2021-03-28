@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import WelcomeBlock from '../components/welcomeBlock'
-import SlideShowContainer from '../components/slideShowContainer'
+import SlideShow from '../components/slideShow'
 import BrowseSection from '../components/browseSection'
 
-function Home() {
+function Home({ size }) {
 
     const [emailSubscription, setEmailSubscription] = useState('')
 
@@ -11,18 +11,19 @@ function Home() {
         setEmailSubscription(email)
 
     }
-    const handleSubmit = email => {
 
-    }
-    console.log(emailSubscription)
 
     return (
         <div className="App">
             <WelcomeBlock />
-            <SlideShowContainer />
-            <BrowseSection email={emailSubscription} handleChange={handleChange} />
+            <SlideShow size={size} />
+            <BrowseSection email={emailSubscription} handleChange={handleChange} size={size} />
         </div>
     )
 }
 
 export default Home
+
+
+
+

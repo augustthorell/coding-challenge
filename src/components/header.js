@@ -1,11 +1,20 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+/* import { NavLink } from 'react-router-dom' */
 import { FaSearch, FaShoppingCart } from "react-icons/fa"
+
 import { IconContext } from 'react-icons'
+import {
+    Nav,
+    NavLink,
+    Bars,
+    NavMenu,
+    NavBtn,
+    NavBtnLink,
+} from './navbarElements';
 
-export default function header() {
+function Header() {
 
-    const header = {
+    /* const header = {
         height: '100px',
         display: 'grid',
         gridTemplateColumns: '1fr 1fr 1fr',
@@ -23,7 +32,7 @@ export default function header() {
     }
     const buttons = {
         display: 'flex',
-        justifyContent: 'space-evenly',
+        justifyContent: 'center',
         gridColumn: '3',
         marginTop: '30px',
     }
@@ -33,11 +42,30 @@ export default function header() {
         width: '100px',
         borderRadius: '4px',
         border: 'none',
-    }
+        cursor: 'pointer',
+    } */
 
 
     return (
-        <header style={header}>
+        <>
+
+            <Nav>
+                <Bars />
+                <NavMenu>
+                    <NavLink to='/' exact activeStyle>Home</NavLink>
+                    <NavLink to='/about' activeStyle>About</NavLink>
+                    <NavLink to='/career' activeStyle>Career</NavLink>
+                </NavMenu>
+
+                <NavBtn>
+                    <NavBtnLink to='/partners'>Partners</NavBtnLink>
+                    <NavLink to='/search' activeStyle><FaSearch /></NavLink>
+                    <NavLink to='/shopping-cart' activeStyle><FaShoppingCart /></NavLink>
+                </NavBtn>
+            </Nav>
+
+        </>
+        /* <header style={header}>
 
             <div style={listContainer}>
                 <NavLink to="/" exact={true} activeClassName="active">Home</NavLink>
@@ -56,13 +84,15 @@ export default function header() {
                         height: '30px',
                         padding: '5px',
                         margin: '5px',
+                        marginLeft: '20px'
                     }
                 }}>
-                    <FaSearch />
-                    <FaShoppingCart />
+                    <NavLink to="/search" activeClassName="active"><FaSearch /></NavLink>
+                    <NavLink to="/checkout" activeClassName="active"><FaShoppingCart /></NavLink>
                 </IconContext.Provider>
             </ul>
 
-        </header>
+        </header> */
     )
 }
+export default Header

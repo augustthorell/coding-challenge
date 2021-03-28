@@ -1,8 +1,11 @@
 import React from 'react'
 import { FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa";
 import { IconContext } from 'react-icons'
+import '../style.css'
 
-function Footer() {
+function Footer({ size }) {
+
+    console.log(size)
     const footer = {
         backgroundColor: '#fff',
         height: '105px',
@@ -10,12 +13,14 @@ function Footer() {
         position: 'absolute',
         bottom: '0',
         padding: '30px 50px',
+
     }
 
-    return (
-        <footer style={footer}>
 
-            <div style={{ float: 'right' }}>
+    return (
+        <footer style={footer} className={size ? 'footerDesktop' : 'footerMobile'}>
+
+            <div>
                 <IconContext.Provider value={{
                     style: {
                         color: "#fff",
@@ -30,12 +35,13 @@ function Footer() {
                     <a href="http://facebook.com"><FaFacebookF /></a>
                     <a href="http://instagram.com"><FaInstagram /></a>
                     <a href="http://linkedin.com"><FaLinkedinIn /></a>
-
                 </IconContext.Provider>
             </div>
-            <p style={{ float: 'left' }}>&copy; {(new Date().getFullYear())} All Rights Reserved.</p>
 
-        </footer>
+            <p>&copy; {(new Date().getFullYear())} All Rights Reserved.</p>
+
+
+        </footer >
     )
 }
 
