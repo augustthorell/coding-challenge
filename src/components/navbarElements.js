@@ -9,7 +9,7 @@ export const Nav = styled.nav`
   justify-content: space-evenly;
   grid-template-columns: 1fr 1fr 1fr;
   z-index: 10;
-  media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     display: none;
 
   }

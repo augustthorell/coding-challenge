@@ -4,13 +4,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
 }
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  
 }
 *:focus {
   outline: none;
@@ -19,17 +17,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
 a {
   text-decoration: none;
   color: #000;
 }
 .active {
   color: #FFC542;
-}
-.slideshowItem div:hover {
-  box-shadow: 12px 13px 4px rgba(24, 89, 81, 0.95);
-  transition: 0.5s ease;
 }
 h1,h2,h4,h5 {
   color: #fff;
@@ -44,21 +37,9 @@ h1,h2,h4,h5 {
   flex-direction: row-reverse;
 }
 
-.browserDesktop {
-    display: grid;
-    grid-template-columns: 2fr 3fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    width: 100%;
-    padding: 0 50px;
-    background-color: #FFC542;
-    min-height: 590px;
+.dropdownActive {
+  display: block;
 }
-.browserMobile {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  width: 100%;
-  padding: 0 50px;
-  background-color: #FFC542;
-  min-height: 590px;
+.dropdownInactive {
+  display: none;
 }

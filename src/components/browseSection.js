@@ -1,28 +1,40 @@
-import React, { useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import giftboxImage from '../assets/giftbox.png'
+import { FaChevronDown } from "react-icons/fa"
+import '../style.css'
+import { NavLink, Link } from 'react-router-dom'
+
+import {
+    DropdownContainer,
+    DropdownList,
+    Dropdown,
+    SectionWrapper,
+    ImageContainer,
+    SubscribeContainer,
+    DropdownButton,
+
+} from './dropdownElements';
+
+function BrowseSection({ email, handleChange, size }) {
+
+    const [text1, setOpenText1] = useState(false)
+    const [text2, setOpenText2] = useState(false)
+    const [text3, setOpenText3] = useState(false)
 
 
-export default function BrowseSection({ email, handleChange, size }) {
     const inputEl = useRef('aaaa')
     const onSubmit = () => {
         inputEl.current.focus()
-    }
-
-
-
-    const sectionList = {
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr 1fr',
-        gridRow: '2',
     }
     const inputStyle = {
         border: '2px solid #fff',
         backgroundColor: 'transparent',
         borderRadius: '40px',
-        width: '100%',
+        width: '90%',
         height: '50px',
         display: 'block',
         padding: '15px',
+        margin: '0 auto',
     }
     const submitStyle = {
         border: '2px solid #fff',
@@ -31,16 +43,32 @@ export default function BrowseSection({ email, handleChange, size }) {
         width: '150px',
         height: '40px',
         marginTop: '20px',
+        display: 'block',
+        margin: '10px auto',
     }
+
+    function handleClick(item) {
+        if (item === 1) {
+            setOpenText1(!text1)
+        } else if (item === 2) {
+            setOpenText2(!text2)
+        } else if (item === 3) {
+            setOpenText3(!text3)
+        }
+
+    }
+
     return (
-        <div className={size ? 'browserDesktop' : 'browserMobile'}>
-            <div style={{ gridColumn: '1', gridRow: '2' }}>
+        <SectionWrapper>
+
+            <SubscribeContainer>
                 <form>
                     <input
                         style={inputStyle}
                         label='Email'
                         type='text'
                         required
+                        placeholder='Enter your Email'
                         value={email}
                         onChange={(e) => handleChange(e.target.value)}
                     />
@@ -50,46 +78,72 @@ export default function BrowseSection({ email, handleChange, size }) {
                         style={submitStyle}
                         onSubmit={(e) => onSubmit(e.target.value)} />
                 </form>
+            </SubscribeContainer>
 
-            </div>
-            <div style={sectionList} >
-                <div style={{ gridColumn: '1' }}>
-                    <h3>Browse</h3>
-                    <ul>
-                        <li>Home</li>
-                        <li>Career</li>
-                        <li>Text 1</li>
-                        <li>Text 2</li>
-                        <li>Text 3</li>
-                    </ul>
-                </div>
-                <div style={{ gridColumn: '2' }}>
-                    <h3>About</h3>
-                    <ul>
-                        <li>About</li>
-                        <li>Contact Us</li>
-                        <li>Partner With Us</li>
-                        <li>Reviews</li>
-                        <li>Sign In</li>
-                    </ul>
-                </div>
-                <div style={{ gridColumn: '3' }}>
-                    <h3>Support</h3>
-                    <ul>
-                        <li>Help Center</li>
-                        <li>Privacy Policy</li>
-                        <li>Terms</li>
-                        <li>FAQs 2</li>
+            <DropdownContainer>
 
-                    </ul>
-                </div>
-            </div>
-            <div style={{ gridColumn: '3', gridRow: '2' }}>
+                <DropdownList style={{ gridColumn: '1' }} onClick={() => handleClick(1)}>
+                    <div>
+                        <h3>Browse</h3>
+                        <Dropdown className={text1 ? 'dropdownActive' : 'dropdownInactive'}>
+                            <Link to='/' exact><li>Home</li></Link>
+                            <Link to='/career'><li>Career</li></Link>
+                            <Link to='/text-1'><li>Text 1</li></Link>
+                            <Link to='/text-2'><li>Text 2</li></Link>
+                            <Link to='/text-3'><li>Text 3</li></Link>
+                        </Dropdown>
+                    </div>
+                    <DropdownButton>
+                        <FaChevronDown />
+                    </DropdownButton>
+                </DropdownList>
+
+                <DropdownList style={{ gridColumn: '2' }} onClick={() => handleClick(2)}>
+                    <div>
+                        <h3>About</h3>
+                        <Dropdown className={text2 ? 'dropdownActive' : 'dropdownInactive'}>
+                            <Link to='/about'><li>About</li></Link>
+                            <Link to='/contact-us'><li>Contact Us</li></Link>
+                            <Link to='/partner-with-us'><li>Partner With Us</li></Link>
+                            <Link to='/reviews'><li>Reviews</li></Link>
+                            <Link to='/sign-in'><li>Sign in</li></Link>
+                        </Dropdown>
+                    </div>
+
+                    <DropdownButton>
+                        <FaChevronDown />
+                    </DropdownButton>
+                </DropdownList>
+
+                <DropdownList style={{ gridColumn: '3' }} onClick={() => handleClick(3)}>
+                    <div>
+                        <h3>Support</h3>
+                        <Dropdown className={text3 ? 'dropdownActive' : 'dropdownInactive'}>
+                            <Link to='/help-center'><li>Help Center</li></Link>
+                            <Link to='/privacy-policy'><li>Privacy Policy</li></Link>
+                            <Link to='/terms'><li>Terms</li></Link>
+                            <Link to='/faq'><li>FAQ</li></Link>
+
+                        </Dropdown>
+                    </div>
+
+                    <DropdownButton>
+                        <FaChevronDown />
+                    </DropdownButton>
+                </DropdownList>
+
+            </DropdownContainer>
+
+            <ImageContainer>
                 <img
                     src={giftboxImage}
                     alt='A package wrapped with green gift string'
+                    style={{ float: 'right', width: '10vw', maxWidth: '130px' }}
                 />
-            </div>
-        </div>
+            </ImageContainer>
+
+        </SectionWrapper>
     )
 }
+
+export default BrowseSection

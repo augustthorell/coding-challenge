@@ -7,6 +7,8 @@ function Cards(props) {
         transition: '0.5s ease',
         cursor: 'pointer',
         position: 'relative',
+        minWidth: '200px',
+        minHeight: '300px',
     }
     const slideshowImage = {
         margin: 'auto',
@@ -22,15 +24,15 @@ function Cards(props) {
         transform: 'translate(-50%, 0%)',
     }
     return (
-        <>
-            <div style={slideshowItem} >
-                <img
-                    src={props.src}
-                    style={slideshowImage}
-                    alt={props.alt} />
-                <h2 style={cardText}>{props.title}</h2>
-            </div>
-        </>
+
+        <div style={slideshowItem} >
+            <img
+                src={props.src}
+                style={slideshowImage}
+                alt={props.alt} />
+            <h2 style={cardText}>{props.title}</h2>
+        </div>
+
     )
 }
 

@@ -5,7 +5,6 @@ import '../style.css'
 
 function Footer({ size }) {
 
-    console.log(size)
     const footer = {
         backgroundColor: '#fff',
         height: '105px',
@@ -13,9 +12,7 @@ function Footer({ size }) {
         position: 'absolute',
         bottom: '0',
         padding: '30px 50px',
-
     }
-
 
     return (
         <footer style={footer} className={size ? 'footerDesktop' : 'footerMobile'}>

@@ -2,7 +2,7 @@ import React from 'react'
 /* import { NavLink } from 'react-router-dom' */
 import { FaSearch, FaShoppingCart } from "react-icons/fa"
 
-import { IconContext } from 'react-icons'
+/* import { IconContext } from 'react-icons' */
 import {
     Nav,
     NavLink,
@@ -58,7 +58,7 @@ function Header() {
                 </NavMenu>
 
                 <NavBtn>
-                    <NavBtnLink to='/partners'>Partners</NavBtnLink>
+                    <NavBtnLink to='/partners' >Partners</NavBtnLink>
                     <NavLink to='/search' activeStyle><FaSearch /></NavLink>
                     <NavLink to='/shopping-cart' activeStyle><FaShoppingCart /></NavLink>
                 </NavBtn>
