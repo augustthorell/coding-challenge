@@ -1,6 +1,6 @@
 import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { FaBars } from "react-icons/fa"
+/* import { FaBars } from "react-icons/fa" */
 
 export const Nav = styled.nav`
   background: #fff;
@@ -9,9 +9,11 @@ export const Nav = styled.nav`
   justify-content: space-evenly;
   grid-template-columns: 1fr 1fr 1fr;
   z-index: 10;
+  position: absolute;
+  width: 100%;
   @media screen and (max-width: 768px) {
-    display: none;
-
+    height: 300px;
+    grid-template-columns: 1fr;
   }
 `
 
@@ -28,9 +30,9 @@ export const NavLink = styled(Link)`
   }
 `
 
-export const Bars = styled(FaBars)`
+export const Bars = styled.div`
   display: none;
-  color: #000;
+  
   @media screen and (max-width: 768px) {
     display: block;
     position: absolute;
@@ -39,16 +41,19 @@ export const Bars = styled(FaBars)`
     transform: translate(-100%, 75%);
     font-size: 1.8rem;
     cursor: pointer;
+    z-index: 100;
+    color: #fff;
   }
 `
 
 export const NavMenu = styled.div`
-grid-column: 2;
+  grid-column: 2;
   display: flex;
   align-items: center;
   justify-content: center;
   @media screen and (max-width: 768px) {
-    display: none;
+    flex-direction: column;
+    grid-column: 1;
   }
 `
 
@@ -56,11 +61,9 @@ export const NavBtn = styled.nav`
   display: flex;
   align-items: center;
   margin-right: 24px;
-  /* Third Nav */
-  /* justify-content: flex-end;
-  width: 100vw; */
   @media screen and (max-width: 768px) {
-    display: none;
+    flex-direction: column;
+    margin-right: 0;
   }
 `
 
@@ -74,5 +77,27 @@ export const NavBtnLink = styled(Link)`
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;  
+  }
+`
+
+export const ShoppingCartMobile = styled(Link)`
+    color: #000;
+    
+    @media screen and (max-width: 768px) {
+      color: #fff;
+      position: absolute;
+      top: -1px;
+      right: 50px;
+      transform: translate(-100%, 75%);
+      font-size: 1.8rem;
+      cursor: pointer;
+      z-index: 100;
+    }
+  }
+`
+export const ShoppingCart = styled(Link)`
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 `

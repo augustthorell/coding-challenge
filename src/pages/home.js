@@ -16,8 +16,8 @@ function Home({ size }) {
     return (
         <div className="App">
             <WelcomeBlock />
-            <SlideShow size={size} />
-            <BrowseSection email={emailSubscription} handleChange={handleChange} size={size} />
+            <SlideShow />
+            <BrowseSection email={emailSubscription} handleChange={handleChange} />
         </div>
     )
 }

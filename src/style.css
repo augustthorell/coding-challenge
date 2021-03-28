@@ -1,6 +1,6 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -26,6 +26,11 @@ a {
 }
 h1,h2,h4,h5 {
   color: #fff;
+  
+}
+.slideshowItem div:hover {
+  box-shadow: 12px 13px 4px rgba(24, 89, 81, 0.95);
+  transition: 0.5s ease;
 }
 .footerMobile {
   display: flex;

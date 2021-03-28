@@ -1,8 +1,7 @@
-import React from 'react'
-/* import { NavLink } from 'react-router-dom' */
-import { FaSearch, FaShoppingCart } from "react-icons/fa"
+import React, { useState, useEffect } from 'react'
 
-/* import { IconContext } from 'react-icons' */
+import { FaSearch, FaShoppingCart, FaBars, FaTimes } from "react-icons/fa"
+
 import {
     Nav,
     NavLink,
@@ -10,47 +9,55 @@ import {
     NavMenu,
     NavBtn,
     NavBtnLink,
+    ShoppingCart,
+    ShoppingCartMobile
 } from './navbarElements';
 
-function Header() {
+function Header({ size }) {
 
-    /* const header = {
-        height: '100px',
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr 1fr',
-        position: 'fixed',
-        top: '0',
-        width: '100%',
-        backgroundColor: '#fff',
-        zIndex: '100',
+    const [nav, setOpenNav] = useState(false)
+
+    const showNavbar = () => {
+        setOpenNav(!nav)
     }
-    const listContainer = {
-        display: 'flex',
-        justifyContent: 'space-evenly',
-        gridColumn: '2',
-        marginTop: '40px',
+
+    useEffect(() => {
+        if (size === true) {
+            setOpenNav(true)
+        } else if (size === false) {
+            setOpenNav(false)
+        }
+    }, [!size])
+    console.log('size ' + size)
+    console.log('nav ' + nav)
+
+    const variants = {
+        open: {
+            transform: 'translateY(0px)',
+            transition: '0.5s',
+        },
+        close: {
+            transform: 'translateY(-300px)',
+            transition: '0.5s',
+        },
     }
-    const buttons = {
-        display: 'flex',
-        justifyContent: 'center',
-        gridColumn: '3',
-        marginTop: '30px',
+    const hamburgerStyle = {
+        color: '#000',
+        transition: '1s',
     }
-    const partnersButton = {
-        backgroundColor: '#FFC542',
-        height: '40px',
-        width: '100px',
-        borderRadius: '4px',
-        border: 'none',
-        cursor: 'pointer',
-    } */
 
 
     return (
         <>
-
-            <Nav>
-                <Bars />
+            <Bars onClick={() => showNavbar()} style={nav ? hamburgerStyle : null}>
+                {nav ? (
+                    <FaTimes />
+                ) : (
+                    <FaBars />
+                )}
+            </Bars>
+            <Nav
+                style={nav ? variants.open : variants.close}>
                 <NavMenu>
                     <NavLink to='/' exact activeStyle>Home</NavLink>
                     <NavLink to='/about' activeStyle>About</NavLink>
@@ -60,39 +67,13 @@ function Header() {
                 <NavBtn>
                     <NavBtnLink to='/partners' >Partners</NavBtnLink>
                     <NavLink to='/search' activeStyle><FaSearch /></NavLink>
-                    <NavLink to='/shopping-cart' activeStyle><FaShoppingCart /></NavLink>
+                    <ShoppingCart to='/shopping-cart' activeStyle ><FaShoppingCart style={nav ? hamburgerStyle : ''} /></ShoppingCart>
                 </NavBtn>
+
             </Nav>
+            <ShoppingCartMobile to='/shopping-cart' activeStyle ><FaShoppingCart style={nav ? hamburgerStyle : ''} /></ShoppingCartMobile>
 
         </>
-        /* <header style={header}>
-
-            <div style={listContainer}>
-                <NavLink to="/" exact={true} activeClassName="active">Home</NavLink>
-                <NavLink to="/about" activeClassName="active">About</NavLink>
-                <NavLink to="/career" activeClassName="active">Career</NavLink>
-
-            </div>
-
-
-            <ul style={buttons}>
-                <button style={partnersButton}>Partners</button>
-                <IconContext.Provider value={{
-                    style: {
-                        color: "#000",
-                        width: '30px',
-                        height: '30px',
-                        padding: '5px',
-                        margin: '5px',
-                        marginLeft: '20px'
-                    }
-                }}>
-                    <NavLink to="/search" activeClassName="active"><FaSearch /></NavLink>
-                    <NavLink to="/checkout" activeClassName="active"><FaShoppingCart /></NavLink>
-                </IconContext.Provider>
-            </ul>
-
-        </header> */
     )
 }
 export default Header

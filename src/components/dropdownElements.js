@@ -39,10 +39,14 @@ export const DropdownList = styled.div`
 `
 export const Dropdown = styled.ul`
     float:left;
-    margin-left: 30px;
+    margin-left: 20px;
+    li {
+        margin-bottom: 20px;
+    }
     @media screen and (min-width: 960px) {
         display: inline-block;
         grid-template-columns: 1fr 1fr 1fr;
+    
   }
 `
 export const SubscribeContainer = styled.div`
@@ -57,6 +61,7 @@ export const SubscribeContainer = styled.div`
 export const ImageContainer = styled.div`
     grid-column: 1;
     grid-row: 1;
+    margin-top: 15px;
     @media screen and (min-width: 960px) {
         grid-column: 3;
         grid-row: 2;

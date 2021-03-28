@@ -21,7 +21,7 @@ function App() {
       <div style={{ minHeight: '100vh', position: 'relative' }}>
         <Header size={size} />
         <Switch>
-          <Route path="/" exact> <Home size={size} /></Route>
+          <Route path="/" exact={true}> <Home size={size} /></Route>
           <Route path="/about" component={About} />
           <Route path="/career" component={Career} />
           <Route path="/partners" component={Partners} />
@@ -36,10 +36,10 @@ function App() {
 export default App
 
 function useWindowSize() {
-  const [windowSize, setWindowSize] = useState(null);
+  const [windowSize, setWindowSize] = useState();
   useEffect(() => {
     function handleResize() {
-      if (window.innerWidth >= 970) {
+      if (window.innerWidth >= 768) {
         setWindowSize(true)
       } else {
         setWindowSize(false)

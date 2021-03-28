@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react'
 import giftboxImage from '../assets/giftbox.png'
 import { FaChevronDown } from "react-icons/fa"
 import '../style.css'
-import { NavLink, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import {
     DropdownContainer,
@@ -15,7 +15,7 @@ import {
 
 } from './dropdownElements';
 
-function BrowseSection({ email, handleChange, size }) {
+function BrowseSection({ email, handleChange }) {
 
     const [text1, setOpenText1] = useState(false)
     const [text2, setOpenText2] = useState(false)

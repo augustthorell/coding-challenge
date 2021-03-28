@@ -9,6 +9,7 @@ function Cards(props) {
         position: 'relative',
         minWidth: '200px',
         minHeight: '300px',
+
     }
     const slideshowImage = {
         margin: 'auto',
