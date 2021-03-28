@@ -15,17 +15,17 @@ import {
 
 } from './dropdownElements';
 
-function BrowseSection({ email, handleChange }) {
+function BrowseSection({ email, handleChange, handleSubmit }) {
 
     const [text1, setOpenText1] = useState(false)
     const [text2, setOpenText2] = useState(false)
     const [text3, setOpenText3] = useState(false)
 
+    const inputRef = useRef()
 
-    const inputEl = useRef('aaaa')
-    const onSubmit = () => {
-        inputEl.current.focus()
-    }
+
+
+
     const inputStyle = {
         border: '2px solid #fff',
         backgroundColor: 'transparent',
@@ -46,7 +46,6 @@ function BrowseSection({ email, handleChange }) {
         display: 'block',
         margin: '10px auto',
     }
-
     function handleClick(item) {
         if (item === 1) {
             setOpenText1(!text1)
@@ -62,21 +61,21 @@ function BrowseSection({ email, handleChange }) {
         <SectionWrapper>
 
             <SubscribeContainer>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <input
                         style={inputStyle}
                         label='Email'
                         type='text'
                         required
                         placeholder='Enter your Email'
-                        value={email}
+                        inputRef={inputRef}
                         onChange={(e) => handleChange(e.target.value)}
                     />
                     <input
                         type='submit'
                         value='Subscribe'
                         style={submitStyle}
-                        onSubmit={(e) => onSubmit(e.target.value)} />
+                    />
                 </form>
             </SubscribeContainer>
 

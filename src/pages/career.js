@@ -1,13 +1,12 @@
 import React from 'react'
 
-export default function home() {
+function Career() {
     return (
-        <div className="App">
-            <header className="App-header">
-                <h1>Career Page</h1>
-            </header>
-
-
+        <div style={{ marginTop: '150px', color: '#000', textAlign: 'center' }}>
+            <h1>Career Page</h1>
         </div>
     )
 }
+
+
+export default Career

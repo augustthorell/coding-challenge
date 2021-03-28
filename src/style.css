@@ -24,14 +24,7 @@ a {
 .active {
   color: #FFC542;
 }
-h1,h2,h4,h5 {
-  color: #fff;
-  
-}
-.slideshowItem div:hover {
-  box-shadow: 12px 13px 4px rgba(24, 89, 81, 0.95);
-  transition: 0.5s ease;
-}
+
 .footerMobile {
   display: flex;
   flex-direction: column;
@@ -41,10 +34,12 @@ h1,h2,h4,h5 {
   justify-content: space-between;
   flex-direction: row-reverse;
 }
-
 .dropdownActive {
   display: block;
 }
 .dropdownInactive {
   display: none;
 }
+
+
+

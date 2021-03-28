@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 
 
+
 /*** Components ***/
 import Footer from './components/footer'
 import Header from './components/header'
@@ -21,7 +22,7 @@ function App() {
       <div style={{ minHeight: '100vh', position: 'relative' }}>
         <Header size={size} />
         <Switch>
-          <Route path="/" exact={true}> <Home size={size} /></Route>
+          <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
           <Route path="/career" component={Career} />
           <Route path="/partners" component={Partners} />

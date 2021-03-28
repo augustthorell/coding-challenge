@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const SectionWrapper = styled.div`
     display: grid;
     background-color: #FFC542;
-    min-height: 700px;
+    height: 800px;
     width: 100%;
     padding: 0 50px;
     gridTemplateColumns: 1fr;

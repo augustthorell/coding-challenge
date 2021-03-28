@@ -16,7 +16,6 @@ import {
 function Header({ size }) {
 
     const [nav, setOpenNav] = useState(false)
-
     const showNavbar = () => {
         setOpenNav(!nav)
     }
@@ -27,9 +26,8 @@ function Header({ size }) {
         } else if (size === false) {
             setOpenNav(false)
         }
-    }, [!size])
-    console.log('size ' + size)
-    console.log('nav ' + nav)
+    }, [size])
+
 
     const variants = {
         open: {
@@ -59,7 +57,7 @@ function Header({ size }) {
             <Nav
                 style={nav ? variants.open : variants.close}>
                 <NavMenu>
-                    <NavLink to='/' exact activeStyle>Home</NavLink>
+                    <NavLink to='/' exact="true" activeStyle>Home</NavLink>
                     <NavLink to='/about' activeStyle>About</NavLink>
                     <NavLink to='/career' activeStyle>Career</NavLink>
                 </NavMenu>
